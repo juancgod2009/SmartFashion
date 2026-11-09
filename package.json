@@ -1,0 +1,14 @@
+{
+  "name": "smartfashion",
+  "version": "2.0.0",
+  "description": "Tienda virtual SmartFashion: catálogo, carrito, pedidos, pagos Wompi y panel administrativo.",
+  "private": true,
+  "license": "UNLICENSED",
+  "engines": { "node": ">=22.13" },
+  "scripts": {
+    "start": "node --disable-warning=ExperimentalWarning server.js",
+    "dev": "node --disable-warning=ExperimentalWarning --watch server.js",
+    "crear-admin": "node --disable-warning=ExperimentalWarning scripts/crear-admin.js",
+    "test": "node --disable-warning=ExperimentalWarning scripts/test.js"
+  }
+}

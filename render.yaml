@@ -1,0 +1,22 @@
+# Plantilla para Render (render.com). Necesita un plan de pago porque exige disco persistente.
+# Verifica precios y nombres de planes actuales en render.com antes de usarla.
+services:
+  - type: web
+    name: smartfashion
+    runtime: docker
+    plan: starter
+    healthCheckPath: /healthz
+    disk:
+      name: datos
+      mountPath: /data
+      sizeGB: 1
+    envVars:
+      - { key: NODE_ENV, value: production }
+      - { key: TRUST_PROXY, value: "1" }
+      - { key: DATA_DIR, value: /data }
+      - { key: BASE_URL, sync: false }          # https://tu-servicio.onrender.com
+      - { key: ADMIN_EMAIL, sync: false }
+      - { key: ADMIN_PASSWORD, sync: false }    # bórrala después del primer arranque
+      - { key: WOMPI_PUBLIC_KEY, sync: false }
+      - { key: WOMPI_INTEGRITY_SECRET, sync: false }
+      - { key: WOMPI_EVENTS_SECRET, sync: false }
